@@ -10,10 +10,15 @@ export default {
         sans: ['Inter', 'sans-serif'],
       },
       colors: {
-        premium: {
-          50: '#f8fafc',
-          900: '#0f172a',
-        }
+        primary: {
+          50: '#eef2ff',
+          100: '#e0e7ff',
+          500: '#6366f1', 
+          600: '#4f46e5', 
+          900: '#312e81',
+        },
+        dark: '#0f172a', 
+        light: '#f8fafc', 
       }
     },
   },
