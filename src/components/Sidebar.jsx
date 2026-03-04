@@ -14,9 +14,10 @@ export default function Sidebar() {
     <>
       <aside className="fixed top-0 left-0 h-screen w-64 bg-white border-r border-gray-100 flex flex-col z-50">
         <div className="px-8 py-8 mb-4">
-          <h2 className="text-lg font-bold text-dark flex items-center gap-2">
-            <FiArrowUpRight className="text-primary-500 stroke-[3]" /> BVH.dev
-          </h2>
+          <NavLink to={'/'}><h2 className="text-lg font-bold text-dark flex items-center gap-2">
+            <FiArrowUpRight className="text-primary-500 stroke-[3]" />
+             BVH.dev
+          </h2></NavLink>
         </div>
 
         <nav className="flex-1 flex flex-col">
