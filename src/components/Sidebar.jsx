@@ -1,11 +1,12 @@
-import { FiArrowUpRight, FiGrid, FiHome, FiMail, FiUser } from "react-icons/fi";
+import { FiActivity, FiArrowUpRight, FiGrid, FiHome, FiMail, FiUser } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
 
 
 export default function Sidebar() {
   const menuItems = [
     { path: '/', label: 'Home', icon: <FiHome /> },
-    { path: '/projects', label: 'ProJects', icon: <FiGrid /> },
+    { path: '/projects', label: 'Projects', icon: <FiGrid /> },
+    { path: '/skills', label: 'Skills', icon: <FiActivity /> },
     { path: '/about', label: 'About', icon: <FiUser /> },
     { path: '/contact', label: 'Contact', icon: <FiMail /> },
   ];
