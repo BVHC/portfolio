@@ -38,8 +38,8 @@ export default function Header() {
         </div>
 
         <div className="flex items-center gap-4 text-gray-500">
-          <button className="hover:text-dark transition hover:bg-slate-400 rounded-full p-1 justify-center items-center"><FiMoon size={16} /></button>
-          <button className="hover:text-dark transition  hover:bg-slate-400 rounded-full p-1 justify-center items-center"><a href="https://github.com/BVHC" target='_blank'><FiGithub size={16} /></a></button>
+          <button className="hover:text-dark transition hover:bg-slate-400 rounded-full p-1 flex justify-center items-center"><FiMoon size={16} /></button>
+          <button className="hover:text-dark transition  hover:bg-slate-400 rounded-full p-1 flex justify-center items-center"><a href="https://github.com/BVHC" target='_blank'><FiGithub size={16} /></a></button>
         </div>
       </div>
     </header>
