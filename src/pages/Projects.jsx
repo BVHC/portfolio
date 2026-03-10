@@ -1,7 +1,94 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { FiArrowRight, FiSearch } from 'react-icons/fi';
+import { projects } from '../content/profile';
+
 export default function Projects() {
+
+  const [activeFilter, setActiveFilter] = useState('All');
+  const filterCategories = ['All', 'React', 'Tailwind CSS', 'Redux', 'SASS/SCSS', 'Spring Boot'];
+  const filteredProjects = activeFilter === 'All' ? projects : projects.filter((project) => project.tags.includes(activeFilter));
+
+
   return (
-    <div className="p-8">
-      <div className="text-3xl font-bold text-primary-900">Trang Project</div>
+    <div className="max-w-5xl animate-fade-in pb-12">
+      <h1 className="text-[3rem] font-bold text-dark mb-4 tracking-tight">Selected Works</h1>
+      <p className="text-lg text-gray-500 mb-10 max-w-2xl leading-relaxed">
+        A collection of digital solutions and creative experiments crafting the future of web experiences.
+      </p>
+
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
+        <div className="flex items-center bg-white px-4 py-2 5 rounded-xl boder border-gray-300 text-sm w-full md:w-72 shadow-sm">
+          <FiSearch className="text-gray-400 mr-2" size={16} />
+          <input
+            type="text"
+            placeholder="Search projects..."
+            className="bg-transparent border-none outline-none text-dark w-full placeholder:text-gray-400"
+          />
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          {filterCategories.map(category => (
+            <button
+              key={category}
+              onClick={() => setActiveFilter(category)}
+              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 ${activeFilter === category
+                ? 'bg-primary-500 text-white shadow-md shadow-primary-500/20'
+                : 'bg-white text-gray-600 border border-gray-200 hover:border-primary-300 hover:text-primary-600'
+                }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {filteredProjects.map((project) => (
+          <div key={project.slug} className="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl hover:shadow-primary-500/5 hover:border-primary-100 transition-all duration-500 flex flex-col">
+            <div className="aspect-[4/3] w-full overflow-hidden bg-gray-50 border-b border-gray-100">
+              <img
+                src={project.coverImage}
+                alt={project.title}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+
+            <div className="p-6 flex flex-col flex-1">
+              <h3 className="text-lg font-bold text-dark mb-2 group-hover:text-primary-600 transition-colors">
+                {project.title}
+              </h3>
+
+              <p className="text-sm text-gray-500 mb-6 flex-1 line-clamp-3 leading-relaxed">
+                {project.summary}
+              </p>
+
+
+              <div className="flex flex-wrap gap-2 mb-6">
+                {project.tags.map(tag => (
+                  <span key={tag} className="px-2.5 py-1 bg-gray-50 border border-gray-200 rounded-md text-xs font-medium text-gray-600">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <Link
+                to={`/projects/${project.slug}`}
+                className="inline-flex items-center gap-1 text-sm font-bold text-primary-600 hover:text-primary-700 transition-colors mt-auto w-fit"
+              >
+                Explore Case Study <FiArrowRight className="transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-16 text-center">
+        <button className="px-6 py-2.5 bg-white border border-gray-200 text-dark font-medium rounded-xl hover:bg-gray-50 transition-colors text-sm shadow-sm">
+          Load More Projects ▾
+        </button>
+      </div>
+
     </div>
-  )
+  );
 }
