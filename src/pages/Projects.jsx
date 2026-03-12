@@ -6,7 +6,7 @@ import { projects } from '../content/profile';
 export default function Projects() {
 
   const [activeFilter, setActiveFilter] = useState('All');
-  const filterCategories = ['All', 'React', 'Tailwind CSS', 'Redux', 'SASS/SCSS', 'Spring Boot', 'Docker', 'MySQL'];
+  const filterCategories = ['All', 'React', 'Redux', 'SASS/SCSS', 'Tailwind CSS', 'Ant Design', 'Spring Boot', 'Docker', 'MySQL', 'Elasticsearch', 'Vite'];
   const filteredProjects = activeFilter === 'All' ? projects : projects.filter((project) => project.tags.includes(activeFilter));
 
 

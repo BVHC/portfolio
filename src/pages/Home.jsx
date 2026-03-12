@@ -52,20 +52,20 @@ export default function Home() {
             <p className="text-sm text-gray-500 flex-1">Get to know my educational background, career objectives, and what drives my passion...</p>
           </Link>
 
-          <Link to="/skills" className="group p-6 bg-white border border-gray-100 rounded-2xl hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 flex flex-col h-full">
-            <div className="w-10 h-10 bg-primary-50 rounded-full flex items-center justify-center text-primary-600 mb-6 group-hover:scale-110 transition-transform">
-              <FiCode size={20} />
-            </div>
-            <h3 className="font-bold text-dark mb-2">Technical Skills</h3>
-            <p className="text-sm text-gray-500 flex-1">A look at my stack: ReactJS, Tailwind CSS, JavaScript (ES6+), and Java Spring Boot backend...</p>
-          </Link>
-
           <Link to="/projects" className="group p-6 bg-white border border-gray-100 rounded-2xl hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 flex flex-col h-full">
             <div className="w-10 h-10 bg-primary-50 rounded-full flex items-center justify-center text-primary-600 mb-6 group-hover:scale-110 transition-transform">
               <FiLayers size={20} />
             </div>
             <h3 className="font-bold text-dark mb-2">Recent Projects</h3>
-            <p className="text-sm text-gray-500 flex-1">Explore my work including a Pet Shop E-commerce and a Learning Materials System...</p>
+            <p className="text-sm text-gray-500 flex-1">Explore my work including Pet Shop E-commerce, Learning Materials System, and this Portfolio...</p>
+          </Link>
+
+          <Link to="/contact" className="group p-6 bg-white border border-gray-100 rounded-2xl hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 flex flex-col h-full">
+            <div className="w-10 h-10 bg-primary-50 rounded-full flex items-center justify-center text-primary-600 mb-6 group-hover:scale-110 transition-transform">
+              <FiMail size={20} />
+            </div>
+            <h3 className="font-bold text-dark mb-2">Get in Touch</h3>
+            <p className="text-sm text-gray-500 flex-1">Have a project idea or want to collaborate? Let's connect and build something great together...</p>
           </Link>
 
         </div>

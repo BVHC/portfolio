@@ -5,9 +5,8 @@ import { NavLink } from "react-router-dom";
 export default function Sidebar() {
   const menuItems = [
     { path: '/', label: 'Home', icon: <FiHome /> },
-    { path: '/projects', label: 'Projects', icon: <FiGrid /> },
-    { path: '/skills', label: 'Skills', icon: <FiActivity /> },
     { path: '/about', label: 'About', icon: <FiUser /> },
+    { path: '/projects', label: 'Projects', icon: <FiGrid /> },
     { path: '/contact', label: 'Contact', icon: <FiMail /> },
   ];
 
