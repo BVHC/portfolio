@@ -6,7 +6,7 @@ import { projects } from '../content/profile';
 export default function Projects() {
 
   const [activeFilter, setActiveFilter] = useState('All');
-  const filterCategories = ['All', 'React', 'Tailwind CSS', 'Redux', 'SASS/SCSS', 'Spring Boot'];
+  const filterCategories = ['All', 'React', 'Tailwind CSS', 'Redux', 'SASS/SCSS', 'Spring Boot', 'Docker', 'MySQL'];
   const filteredProjects = activeFilter === 'All' ? projects : projects.filter((project) => project.tags.includes(activeFilter));
 
 
@@ -55,9 +55,12 @@ export default function Projects() {
             </div>
 
             <div className="p-6 flex flex-col flex-1">
-              <h3 className="text-lg font-bold text-dark mb-2 group-hover:text-primary-600 transition-colors">
+              <Link
+                to={`/projects/${project.slug}`} 
+                className="text-lg font-bold text-dark mb-2 group-hover:text-primary-600 transition-colors"
+              >
                 {project.title}
-              </h3>
+              </Link>
 
               <p className="text-sm text-gray-500 mb-6 flex-1 line-clamp-3 leading-relaxed">
                 {project.summary}
