@@ -5,37 +5,33 @@ import { projects } from '../content/profile';
 
 export default function ProjectDetail() {
   // === PHẦN 1: LOGIC ===
-  
+
   // 1. Lấy mã 'slug' từ thanh địa chỉ (Ví dụ: /projects/pet-shop-ecommerce -> slug là 'pet-shop-ecommerce')
   const { slug } = useParams();
-  
+
   // 2. Đi tìm vị trí (index) của dự án có slug trùng khớp trong kho dữ liệu
-  const projectIndex = projects.findIndex((p) => p.slug === slug);
+  const projectIndex = projects.findIndex(p => p.slug === slug);
   const project = projects[projectIndex];
 
-  // 3. Xử lý lỗi: Nếu gõ link bậy bạ không có dự án, "đá" người dùng về trang danh sách
   if (!project) {
     return <Navigate to="/projects" replace />;
   }
 
   // 4. Tìm dự án trước và sau để làm nút Next/Prev ở cuối trang
-  const prevProject = projectIndex > 0 ? projects[projectIndex - 1] : null;
+  const prevProject = projectIndex > 0 ?  projects[projectIndex - 1] : null;
   const nextProject = projectIndex < projects.length - 1 ? projects[projectIndex + 1] : null;
 
-  // === PHẦN 2: GIAO DIỆN JSX ===
+  // PHẦN 2: GIAO DIỆN JSX 
   return (
     <div className="max-w-6xl animate-fade-in pb-20">
-      
-      {/* --- Breadcrumb (Đường dẫn điều hướng) --- */}
       <div className="text-sm font-medium text-gray-400 mb-8 flex items-center gap-2">
         <Link to="/" className="hover:text-dark transition">Home</Link>
         <span>/</span>
-        <Link to="/projects" className="hover:text-dark transition">Projects</Link>
+        <Link to={"/projects"} className="hover:text-dark transition">Projects</Link>
         <span>/</span>
         <span className="text-dark">{project.title}</span>
       </div>
 
-      {/* --- Header: Tiêu đề & Nút bấm --- */}
       <header className="mb-12">
         <h1 className="text-[2.5rem] md:text-[3.5rem] font-bold text-dark mb-4 tracking-tight leading-tight">
           {project.title}
@@ -43,8 +39,7 @@ export default function ProjectDetail() {
         <p className="text-xl text-gray-500 mb-8 max-w-3xl leading-relaxed">
           {project.summary}
         </p>
-        
-        {/* Render nút bấm có điều kiện (Nếu có link thì mới hiện) */}
+
         {project.links && (
           <div className="flex flex-wrap items-center gap-4">
             {project.links.demo && (
@@ -61,19 +56,15 @@ export default function ProjectDetail() {
         )}
       </header>
 
-      {/* --- Ảnh Cover --- */}
       <div className="aspect-[21/9] w-full bg-gray-50 rounded-2xl overflow-hidden mb-16 border border-gray-100 shadow-sm">
         <img src={project.coverImage} alt="Cover" className="w-full h-full object-cover" />
       </div>
 
-      {/* --- Cấu trúc 2 cột (Menu trái & Nội dung phải) --- */}
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-16">
-        
-        {/* CỘT TRÁI: Menu Mục lục (Table of Contents) & Meta Info */}
+
         <div className="lg:col-span-1">
-          {/* sticky top-32: Cuộn theo màn hình và cách top 128px */}
           <div className="sticky top-32 flex flex-col gap-10">
-            
+
             <div>
               <h4 className="text-[11px] font-bold text-gray-900 mb-4 tracking-widest uppercase">Table of Contents</h4>
               <ul className="space-y-3 text-sm font-medium text-gray-500 border-l-2 border-gray-100 pl-4">
@@ -92,23 +83,22 @@ export default function ProjectDetail() {
                 </div>
                 <div>
                   <span className="block text-gray-400 font-medium mb-1">Timeline</span>
-                  <span className="font-bold text-dark">{project.timeline
-                    }</span>
+                  <span className="font-bold text-dark">{project.timeline}</span>
                 </div>
               </div>
             </div>
 
           </div>
         </div>
+        
 
-        {/* CỘT PHẢI: Nội dung chi tiết */}
         <div className="lg:col-span-3 space-y-16 text-gray-600 leading-relaxed text-lg">
           
           <section id="overview" className="scroll-mt-32">
             <h2 className="text-2xl font-bold text-dark mb-4 flex items-center gap-3">
               <span className="w-8 h-[2px] bg-primary-500"></span> The Overview
             </h2>
-            <p>{project.overview || 'Overview coming soon...'}</p>
+            <p>{project.overview}</p>
           </section>
 
           {/* Render nếu có mảng challenge và solution */}
@@ -140,14 +130,13 @@ export default function ProjectDetail() {
           <section id="tech-stack" className="scroll-mt-32 bg-gray-50 rounded-2xl p-8 border border-gray-100">
             <h2 className="text-xl font-bold text-dark mb-6">Tech Stack & Tools</h2>
             <div className="flex flex-wrap gap-3">
-              {project.techStack?.map((tech) => (
+              {project.techStack?.map( (tech) => (
                 <span key={tech} className="px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm font-medium text-dark shadow-sm">
                   {tech}
                 </span>
               ))}
             </div>
           </section>
-
         </div>
       </div>
 
