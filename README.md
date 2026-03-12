@@ -1,16 +1,96 @@
-# React + Vite
+# 🌐 Bui Van Hien — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimalist, premium personal portfolio website built with **React 19** and **Tailwind CSS** to showcase projects, skills, and professional background.
 
-Currently, two official plugins are available:
+![React](https://img.shields.io/badge/React-19.2-blue)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC)
+![Vite](https://img.shields.io/badge/Vite-7.3-646CFF)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔧 Tech Stack
 
-## React Compiler
+| Category | Technologies |
+|----------|-------------|
+| **Framework** | React 19 |
+| **Bundler** | Vite 7 (SWC plugin) |
+| **Styling** | Tailwind CSS 3.4, PostCSS, Autoprefixer |
+| **Routing** | React Router v7 |
+| **Icons** | React Icons (Feather Icons) |
+| **Email** | EmailJS |
+| **Linting** | ESLint |
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+---
 
-## Expanding the ESLint configuration
+## 📁 Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+portfolio/
+├── public/
+├── src/
+│   ├── app/
+│   │   ├── App.jsx          # Router configuration
+│   │   └── Layout.jsx       # Sidebar + Header + Outlet layout
+│   ├── assets/
+│   │   └── styles/
+│   │       └── globals.css   # Tailwind directives & custom styles
+│   ├── components/
+│   │   ├── Header.jsx        # Top bar with clock, search, icons
+│   │   ├── Sidebar.jsx       # Navigation sidebar
+│   │   └── Footer.jsx
+│   ├── content/
+│   │   └── profile.js        # Projects data (case studies)
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── About.jsx
+│   │   ├── Projects.jsx      # Filterable project gallery
+│   │   ├── ProjectDetail.jsx # Dynamic case study page
+│   │   ├── Skills.jsx
+│   │   └── Contact.jsx       # EmailJS contact form
+│   └── main.jsx
+├── tailwind.config.js
+├── postcss.config.js
+├── vite.config.js
+└── package.json
+```
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- **Node.js** 18+
+- **npm** or **yarn**
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/BVHC/portfolio.git
+cd portfolio
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+The app will be running at `http://localhost:5173`.
+
+### Build for Production
+
+```bash
+npm run build
+npm run preview
+```
+
+---
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+> Built with ❤️ by **Bui Van Hien** — PTIT Student | Aspiring Frontend Developer

@@ -1,4 +1,4 @@
-import { FiActivity, FiArrowUpRight, FiGrid, FiHome, FiMail, FiUser } from "react-icons/fi";
+import { FiActivity, FiTerminal , FiGrid, FiHome, FiMail, FiUser } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
 
 
@@ -15,8 +15,8 @@ export default function Sidebar() {
       <aside className="fixed top-0 left-0 h-screen w-64 bg-white border-r border-gray-100 flex flex-col z-50">
         <div className="px-8 py-8 mb-4">
           <NavLink to={'/'}><h2 className="text-lg font-bold text-dark flex items-center gap-2">
-            <FiArrowUpRight className="text-primary-500 stroke-[3]" />
-             BVH.dev
+            <FiTerminal className="text-primary-500 stroke-[3]" />
+             BVH
           </h2></NavLink>
         </div>
 
