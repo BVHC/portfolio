@@ -4,8 +4,6 @@ import { FiArrowRight, FiGithub, FiExternalLink, FiArrowLeft } from 'react-icons
 import { projects } from '../content/profile';
 
 export default function ProjectDetail() {
-  // === PHẦN 1: LOGIC ===
-
   // 1. Lấy mã 'slug' từ thanh địa chỉ (Ví dụ: /projects/pet-shop-ecommerce -> slug là 'pet-shop-ecommerce')
   const { slug } = useParams();
 
@@ -21,7 +19,6 @@ export default function ProjectDetail() {
   const prevProject = projectIndex > 0 ?  projects[projectIndex - 1] : null;
   const nextProject = projectIndex < projects.length - 1 ? projects[projectIndex + 1] : null;
 
-  // PHẦN 2: GIAO DIỆN JSX 
   return (
     <div className="max-w-6xl animate-fade-in pb-20">
       <div className="text-sm font-medium text-gray-400 mb-8 flex items-center gap-2">
