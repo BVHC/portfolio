@@ -4,10 +4,7 @@ import { FiArrowRight, FiGithub, FiExternalLink, FiArrowLeft } from 'react-icons
 import { projects } from '../content/profile';
 
 export default function ProjectDetail() {
-  // 1. Lấy mã 'slug' từ thanh địa chỉ (Ví dụ: /projects/pet-shop-ecommerce -> slug là 'pet-shop-ecommerce')
   const { slug } = useParams();
-
-  // 2. Đi tìm vị trí (index) của dự án có slug trùng khớp trong kho dữ liệu
   const projectIndex = projects.findIndex(p => p.slug === slug);
   const project = projects[projectIndex];
 
@@ -15,25 +12,24 @@ export default function ProjectDetail() {
     return <Navigate to="/projects" replace />;
   }
 
-  // 4. Tìm dự án trước và sau để làm nút Next/Prev ở cuối trang
   const prevProject = projectIndex > 0 ?  projects[projectIndex - 1] : null;
   const nextProject = projectIndex < projects.length - 1 ? projects[projectIndex + 1] : null;
 
   return (
     <div className="max-w-6xl animate-fade-in pb-20">
-      <div className="text-sm font-medium text-gray-400 mb-8 flex items-center gap-2">
-        <Link to="/" className="hover:text-dark transition">Home</Link>
+      <div className="text-sm font-medium text-gray-400 dark:text-gray-500 mb-8 flex items-center gap-2">
+        <Link to="/" className="hover:text-dark dark:hover:text-white transition">Home</Link>
         <span>/</span>
-        <Link to={"/projects"} className="hover:text-dark transition">Projects</Link>
+        <Link to={"/projects"} className="hover:text-dark dark:hover:text-white transition">Projects</Link>
         <span>/</span>
-        <span className="text-dark">{project.title}</span>
+        <span className="text-dark dark:text-white">{project.title}</span>
       </div>
 
       <header className="mb-12">
-        <h1 className="text-[2.5rem] md:text-[3.5rem] font-bold text-dark mb-4 tracking-tight leading-tight">
+        <h1 className="text-[2.5rem] md:text-[3.5rem] font-bold text-dark dark:text-white mb-4 tracking-tight leading-tight">
           {project.title}
         </h1>
-        <p className="text-xl text-gray-500 mb-8 max-w-3xl leading-relaxed">
+        <p className="text-xl text-gray-500 dark:text-gray-400 mb-8 max-w-3xl leading-relaxed">
           {project.summary}
         </p>
 
@@ -45,7 +41,7 @@ export default function ProjectDetail() {
               </a>
             )}
             {project.links.github && (
-              <a href={project.links.github} target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-white hover:bg-gray-50 text-dark border border-gray-200 px-5 py-2.5 rounded-lg font-medium transition-colors">
+              <a href={project.links.github} target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-white dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-slate-700 text-dark dark:text-white border border-gray-200 dark:border-slate-700 px-5 py-2.5 rounded-lg font-medium transition-colors">
                 <FiGithub /> Source Code
               </a>
             )}
@@ -53,7 +49,7 @@ export default function ProjectDetail() {
         )}
       </header>
 
-      <div className="aspect-[21/9] w-full bg-gray-50 rounded-2xl overflow-hidden mb-16 border border-gray-100 shadow-sm">
+      <div className="aspect-[21/9] w-full bg-gray-50 dark:bg-slate-800 rounded-2xl overflow-hidden mb-16 border border-gray-100 dark:border-slate-700 shadow-sm">
         <img src={project.coverImage} alt="Cover" className="w-full h-full object-cover" />
       </div>
 
@@ -63,24 +59,24 @@ export default function ProjectDetail() {
           <div className="sticky top-32 flex flex-col gap-10">
 
             <div>
-              <h4 className="text-[11px] font-bold text-gray-900 mb-4 tracking-widest uppercase">Table of Contents</h4>
-              <ul className="space-y-3 text-sm font-medium text-gray-500 border-l-2 border-gray-100 pl-4">
-                <li><a href="#overview" className="hover:text-primary-600 transition-colors">Overview</a></li>
-                <li><a href="#challenge" className="hover:text-primary-600 transition-colors">Challenge & Solution</a></li>
-                <li><a href="#tech-stack" className="hover:text-primary-600 transition-colors">Tech Stack</a></li>
+              <h4 className="text-[11px] font-bold text-gray-900 dark:text-gray-300 mb-4 tracking-widest uppercase">Table of Contents</h4>
+              <ul className="space-y-3 text-sm font-medium text-gray-500 dark:text-gray-400 border-l-2 border-gray-100 dark:border-slate-700 pl-4">
+                <li><a href="#overview" className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Overview</a></li>
+                <li><a href="#challenge" className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Challenge & Solution</a></li>
+                <li><a href="#tech-stack" className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Tech Stack</a></li>
               </ul>
             </div>
 
             <div>
-              <h4 className="text-[11px] font-bold text-gray-900 mb-4 tracking-widest uppercase">Meta</h4>
+              <h4 className="text-[11px] font-bold text-gray-900 dark:text-gray-300 mb-4 tracking-widest uppercase">Meta</h4>
               <div className="space-y-4 text-sm">
                 <div>
-                  <span className="block text-gray-400 font-medium mb-1">Role</span>
-                  <span className="font-bold text-dark">{project.role}</span>
+                  <span className="block text-gray-400 dark:text-gray-500 font-medium mb-1">Role</span>
+                  <span className="font-bold text-dark dark:text-white">{project.role}</span>
                 </div>
                 <div>
-                  <span className="block text-gray-400 font-medium mb-1">Timeline</span>
-                  <span className="font-bold text-dark">{project.timeline}</span>
+                  <span className="block text-gray-400 dark:text-gray-500 font-medium mb-1">Timeline</span>
+                  <span className="font-bold text-dark dark:text-white">{project.timeline}</span>
                 </div>
               </div>
             </div>
@@ -89,21 +85,20 @@ export default function ProjectDetail() {
         </div>
         
 
-        <div className="lg:col-span-3 space-y-16 text-gray-600 leading-relaxed text-lg">
+        <div className="lg:col-span-3 space-y-16 text-gray-600 dark:text-gray-400 leading-relaxed text-lg">
           
           <section id="overview" className="scroll-mt-32">
-            <h2 className="text-2xl font-bold text-dark mb-4 flex items-center gap-3">
+            <h2 className="text-2xl font-bold text-dark dark:text-white mb-4 flex items-center gap-3">
               <span className="w-8 h-[2px] bg-primary-500"></span> The Overview
             </h2>
             <p>{project.overview}</p>
           </section>
 
-          {/* Render nếu có mảng challenge và solution */}
           {(project.challenge || project.solution) && (
             <section id="challenge" className="scroll-mt-32 grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-lg font-bold text-red-600 flex items-center gap-2 mb-4">
-                  <span className="bg-red-50 text-red-500 px-2 py-0.5 rounded text-sm">⚠</span> The Challenge
+                <h3 className="text-lg font-bold text-red-600 dark:text-red-400 flex items-center gap-2 mb-4">
+                  <span className="bg-red-50 dark:bg-red-900/30 text-red-500 dark:text-red-400 px-2 py-0.5 rounded text-sm">⚠</span> The Challenge
                 </h3>
                 <ul className="space-y-4">
                   {project.challenge?.map((item, i) => (
@@ -112,23 +107,23 @@ export default function ProjectDetail() {
                 </ul>
               </div>
               <div>
-                <h3 className="text-lg font-bold text-green-600 flex items-center gap-2 mb-4">
-                  <span className="bg-green-50 text-green-500 px-2 py-0.5 rounded text-sm">✓</span> The Solution
+                <h3 className="text-lg font-bold text-green-600 dark:text-green-400 flex items-center gap-2 mb-4">
+                  <span className="bg-green-50 dark:bg-green-900/30 text-green-500 dark:text-green-400 px-2 py-0.5 rounded text-sm">✓</span> The Solution
                 </h3>
                 <ul className="space-y-4">
                   {project.solution?.map((item, i) => (
-                    <li key={i} className="flex gap-3 text-sm"><span className="text-green-500 mt-1">✓</span> {item}</li>
+                    <li key={i} className="flex gap-3 text-sm"><span className="text-green-500 dark:text-green-400 mt-1">✓</span> {item}</li>
                   ))}
                 </ul>
               </div>
             </section>
           )}
 
-          <section id="tech-stack" className="scroll-mt-32 bg-gray-50 rounded-2xl p-8 border border-gray-100">
-            <h2 className="text-xl font-bold text-dark mb-6">Tech Stack & Tools</h2>
+          <section id="tech-stack" className="scroll-mt-32 bg-gray-50 dark:bg-slate-800 rounded-2xl p-8 border border-gray-100 dark:border-slate-700">
+            <h2 className="text-xl font-bold text-dark dark:text-white mb-6">Tech Stack & Tools</h2>
             <div className="flex flex-wrap gap-3">
               {project.techStack?.map( (tech) => (
-                <span key={tech} className="px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm font-medium text-dark shadow-sm">
+                <span key={tech} className="px-4 py-2 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded-lg text-sm font-medium text-dark dark:text-gray-200 shadow-sm">
                   {tech}
                 </span>
               ))}
@@ -138,18 +133,18 @@ export default function ProjectDetail() {
       </div>
 
       {/* --- Điều hướng bài viết (Next / Prev) --- */}
-      <div className="mt-24 pt-10 border-t border-gray-100 flex justify-between items-center">
+      <div className="mt-24 pt-10 border-t border-gray-100 dark:border-slate-800 flex justify-between items-center">
         {prevProject ? (
           <Link to={`/projects/${prevProject.slug}`} className="group flex flex-col gap-1">
-            <span className="text-[11px] font-bold text-gray-400 uppercase tracking-widest flex items-center gap-1 group-hover:text-primary-600 transition"><FiArrowLeft /> Previous Project</span>
-            <span className="font-bold text-dark group-hover:text-primary-600 transition">{prevProject.title}</span>
+            <span className="text-[11px] font-bold text-gray-400 uppercase tracking-widest flex items-center gap-1 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition"><FiArrowLeft /> Previous Project</span>
+            <span className="font-bold text-dark dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition">{prevProject.title}</span>
           </Link>
         ) : <div />}
 
         {nextProject ? (
           <Link to={`/projects/${nextProject.slug}`} className="group flex flex-col items-end gap-1">
-            <span className="text-[11px] font-bold text-gray-400 uppercase tracking-widest flex items-center gap-1 group-hover:text-primary-600 transition">Next Project <FiArrowRight /></span>
-            <span className="font-bold text-dark group-hover:text-primary-600 transition">{nextProject.title}</span>
+            <span className="text-[11px] font-bold text-gray-400 uppercase tracking-widest flex items-center gap-1 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition">Next Project <FiArrowRight /></span>
+            <span className="font-bold text-dark dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition">{nextProject.title}</span>
           </Link>
         ) : <div />}
       </div>

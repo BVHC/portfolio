@@ -8,14 +8,14 @@ export default function Home() {
 
       {/* 1. Hero Section */}
       <section className="mb-20">
-        <h1 className="text-[3.5rem] leading-[1.1] font-bold text-dark mb-4 tracking-tight">
+        <h1 className="text-[3.5rem] leading-[1.1] font-bold text-dark dark:text-white mb-4 tracking-tight">
           Bui Van Hien<br />
-          <span className="text-gray-600 font-medium text-[2.5rem] md:text-[3rem] leading-tight block mt-2">
-            Crafting <span className="text-primary-600 font-bold">Digital Excellence</span> through Code.
+          <span className="text-gray-600 dark:text-gray-400 font-medium text-[2.5rem] md:text-[3rem] leading-tight block mt-2">
+            Crafting <span className="text-primary-600 dark:text-primary-400 font-bold">Digital Excellence</span> through Code.
           </span>
         </h1>
 
-        <p className="text-lg text-gray-600 leading-relaxed mb-10 max-w-3xl">
+        <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-10 max-w-3xl">
           I am an Information Technology student at PTIT, highly passionate about creating seamless web experiences. With a solid foundation in modern technologies like React, Tailwind CSS, and Java Spring Boot, I am actively seeking a Frontend Developer Internship to apply my skills to real-world products and continuously learn from experienced engineers.
         </p>
 
@@ -28,7 +28,7 @@ export default function Home() {
           </Link>
           <Link
             to="/contact"
-            className="flex items-center gap-2 bg-white hover:bg-gray-50 text-dark border border-gray-200 px-6 py-3 rounded-lg font-medium transition-colors"
+            className="flex items-center gap-2 bg-white dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-slate-700 text-dark dark:text-white border border-gray-200 dark:border-slate-700 px-6 py-3 rounded-lg font-medium transition-colors"
           >
             <FiMail /> Let's Connect
           </Link>
@@ -39,39 +39,39 @@ export default function Home() {
       <section>
         <div className="flex items-center gap-2 mb-6">
           <div className="w-1 h-5 bg-primary-600 rounded-full"></div>
-          <h2 className="text-xl font-bold text-dark">Quick Access</h2>
+          <h2 className="text-xl font-bold text-dark dark:text-white">Quick Access</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-          <Link to="/about" className="group p-6 bg-white border border-gray-100 rounded-2xl hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 flex flex-col h-full">
-            <div className="w-10 h-10 bg-primary-50 rounded-full flex items-center justify-center text-primary-600 mb-6 group-hover:scale-110 transition-transform">
+          <Link to="/about" className="group p-6 bg-white dark:bg-slate-800 border border-gray-100 dark:border-slate-700 rounded-2xl hover:border-primary-200 dark:hover:border-primary-700 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 flex flex-col h-full">
+            <div className="w-10 h-10 bg-primary-50 dark:bg-primary-900/30 rounded-full flex items-center justify-center text-primary-600 dark:text-primary-400 mb-6 group-hover:scale-110 transition-transform">
               <FiUser size={20} />
             </div>
-            <h3 className="font-bold text-dark mb-2">About Me</h3>
-            <p className="text-sm text-gray-500 flex-1">Get to know my educational background, career objectives, and what drives my passion...</p>
+            <h3 className="font-bold text-dark dark:text-white mb-2">About Me</h3>
+            <p className="text-sm text-gray-500 dark:text-gray-400 flex-1">Get to know my educational background, career objectives, and what drives my passion...</p>
           </Link>
 
-          <Link to="/projects" className="group p-6 bg-white border border-gray-100 rounded-2xl hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 flex flex-col h-full">
-            <div className="w-10 h-10 bg-primary-50 rounded-full flex items-center justify-center text-primary-600 mb-6 group-hover:scale-110 transition-transform">
+          <Link to="/projects" className="group p-6 bg-white dark:bg-slate-800 border border-gray-100 dark:border-slate-700 rounded-2xl hover:border-primary-200 dark:hover:border-primary-700 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 flex flex-col h-full">
+            <div className="w-10 h-10 bg-primary-50 dark:bg-primary-900/30 rounded-full flex items-center justify-center text-primary-600 dark:text-primary-400 mb-6 group-hover:scale-110 transition-transform">
               <FiLayers size={20} />
             </div>
-            <h3 className="font-bold text-dark mb-2">Recent Projects</h3>
-            <p className="text-sm text-gray-500 flex-1">Explore my work including Pet Shop E-commerce, Learning Materials System, and this Portfolio...</p>
+            <h3 className="font-bold text-dark dark:text-white mb-2">Recent Projects</h3>
+            <p className="text-sm text-gray-500 dark:text-gray-400 flex-1">Explore my work including Pet Shop E-commerce, Learning Materials System, and this Portfolio...</p>
           </Link>
 
-          <Link to="/contact" className="group p-6 bg-white border border-gray-100 rounded-2xl hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 flex flex-col h-full">
-            <div className="w-10 h-10 bg-primary-50 rounded-full flex items-center justify-center text-primary-600 mb-6 group-hover:scale-110 transition-transform">
+          <Link to="/contact" className="group p-6 bg-white dark:bg-slate-800 border border-gray-100 dark:border-slate-700 rounded-2xl hover:border-primary-200 dark:hover:border-primary-700 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 flex flex-col h-full">
+            <div className="w-10 h-10 bg-primary-50 dark:bg-primary-900/30 rounded-full flex items-center justify-center text-primary-600 dark:text-primary-400 mb-6 group-hover:scale-110 transition-transform">
               <FiMail size={20} />
             </div>
-            <h3 className="font-bold text-dark mb-2">Get in Touch</h3>
-            <p className="text-sm text-gray-500 flex-1">Have a project idea or want to collaborate? Let's connect and build something great together...</p>
+            <h3 className="font-bold text-dark dark:text-white mb-2">Get in Touch</h3>
+            <p className="text-sm text-gray-500 dark:text-gray-400 flex-1">Have a project idea or want to collaborate? Let's connect and build something great together...</p>
           </Link>
 
         </div>
 
         <div className="mt-8 text-right">
-          <Link to="/about" className="inline-flex items-center gap-1 text-sm font-bold text-dark hover:text-primary-600 transition-colors">
+          <Link to="/about" className="inline-flex items-center gap-1 text-sm font-bold text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
             Explore About Me <FiArrowRight />
           </Link>
         </div>
